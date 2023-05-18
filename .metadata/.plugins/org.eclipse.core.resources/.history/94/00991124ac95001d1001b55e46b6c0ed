@@ -1,0 +1,12 @@
+#database configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/Naresh_It
+spring.datasource.username=sachin
+spring.datasource.password=password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+c3p0.minSize=10
+c3p0.maxSize=100
+
+#specify datasource type
+spring.datasource.type=com.mchange.v2.c3p0.ComboPooledDataSource
+

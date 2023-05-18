@@ -1,0 +1,24 @@
+package com.nt;
+
+import java.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("wf")
+public class FindWeather 
+{
+	@Autowired
+	private LocalDate localdate;
+	
+	public String weatherFinder()
+	{
+		int month=localdate.lengthOfMonth();
+		if(month>=3 && month<=6)
+			return "Summer";
+		else if(month>=7 && month<=10)
+		    return "Winter";
+		else
+			return "Rainy-Season";
+	}
+
+}

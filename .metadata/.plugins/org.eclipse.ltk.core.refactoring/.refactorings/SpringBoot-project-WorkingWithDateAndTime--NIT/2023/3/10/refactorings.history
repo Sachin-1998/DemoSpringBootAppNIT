@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.datetime.services.IProductMgmtRepo&apos; to &apos;IProductMgmtService&apos;&#x0A;- Original project: &apos;SpringBoot-project-WorkingWithDateAndTime--NIT&apos;&#x0A;- Original element: &apos;com.datetime.services.IProductMgmtRepo&apos;&#x0A;- Renamed element: &apos;com.datetime.services.IProductMgmtService&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IProductMgmtRepo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.datetime.services{IProductMgmtRepo.java[IProductMgmtRepo" matchStrategy="1" name="IProductMgmtService" qualified="false" references="true" similarDeclarations="false" stamp="1678303503849" textual="false" version="1.0"/>
+</session>

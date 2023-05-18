@@ -1,0 +1,22 @@
+package com.nt.aop;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+@Aspect
+@Component
+public class txService
+{
+	@Pointcut
+	public void p1("execution(public String com.nt.FindWeather.weatherFinder())")
+	{
+		
+	}
+	@Before("p1()")
+	public void begintx()
+	{
+		System.out.println("tx begin");
+	}
+
+}

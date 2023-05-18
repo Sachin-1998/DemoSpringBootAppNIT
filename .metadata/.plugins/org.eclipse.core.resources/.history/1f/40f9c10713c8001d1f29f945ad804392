@@ -1,0 +1,15 @@
+# mysql DataSource config
+mysql.datasource.jdbc-url=jdbc:mysql://localhost:3306/Naresh_It
+mysql.datasource.username=sachin
+mysql.datasource.password=password
+mysql.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+
+
+# postgresql datasource config
+
+postgresql.datasource.jdbc-url=jdbc:postgresql://localhost:5432/FinXL
+postgresql.datasource.username=sachin
+postgresql.datasource.password=Sachin123
+postgresql.datasource.driver-class-name=org.postgresql.Driver
+

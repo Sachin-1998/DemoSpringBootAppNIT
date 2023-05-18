@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;BulkInjection&apos; to &apos;com.iit.BulkInjection&apos;&#x0A;- Original project: &apos;SpringBootDataInjection-3&apos;&#x0A;- Original element: &apos;SpringBootDataInjection-3/src/main/java/BulkInjection&apos;&#x0A;- Renamed element: &apos;SpringBootDataInjection-3/src/main/java/com.iit.BulkInjection&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;BulkInjection&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;BulkInjection" name="com.iit.BulkInjection" qualified="false" references="true" stamp="1673199462471" textual="false" version="1.0"/>
+</session>

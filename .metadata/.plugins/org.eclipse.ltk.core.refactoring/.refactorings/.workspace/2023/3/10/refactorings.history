@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringBoot-project-for-AssociationMapping1ToMorMTo1-NIT&apos; to &apos;SpringBoot-project-for-AssociationMapping1ToMorMTo1AndHqlJoins-NIT&apos;" description="Rename resource &apos;SpringBoot-project-for-AssociationMapping1ToMorMTo1-NIT&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SpringBoot-project-for-AssociationMapping1ToMorMTo1-NIT" name="SpringBoot-project-for-AssociationMapping1ToMorMTo1AndHqlJoins-NIT" stamp="1678266029737" updateReferences="true"/>
+</session>

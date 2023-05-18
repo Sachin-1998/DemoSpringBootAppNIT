@@ -1,0 +1,6 @@
+# Database Configuration
+spring.datasource.url=jdbc:postgresql://mysql-containerr
+:5432/blog_app_api
+spring.datasource.username=sachin
+spring.datasource.password=Sachin123
+spring.jpa.show-sql=true

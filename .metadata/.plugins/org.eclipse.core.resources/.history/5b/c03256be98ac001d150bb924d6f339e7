@@ -1,0 +1,38 @@
+package com.nit.ServiceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Component;
+
+import com.nit.Repository.PandSRepo;
+import com.nit.entity.Employee;
+import com.nit.services.IPagingandSortingService;
+@Component
+public class PagingandSortingServiceImpl implements IPagingandSortingService{
+
+	@Autowired
+	private PandSRepo PandGsevice;
+	@Override
+	public Iterable<Employee> getEmployeByOrder(boolean ascOrder, String... props) {
+		//create a sort obj
+		Sort sort=Sort.by(ascOrder?Direction.ASC:Direction.DESC,props);
+		//use repo
+		Iterable<Employee> findAllByOrder = PandGsevice.findAll(sort);
+		return findAllByOrder;
+	}
+	@Override
+	public Page<Employee> getEmployeThroughPaging(Integer pageNumber, Integer pageSize, boolean ascOrder,
+			String props) {
+		//make sort obj
+		Sort sort=Sort.by(ascOrder?Direction.ASC:Direction.DESC,props);
+		//make pagable obj
+		Pageable pageable=PageRequest.of(1, 2, sort);
+		Page<Employee> findAllByPagingAndSorting= PandGsevice.findAll(pageable);
+		return findAllByPagingAndSorting;
+	}
+
+}

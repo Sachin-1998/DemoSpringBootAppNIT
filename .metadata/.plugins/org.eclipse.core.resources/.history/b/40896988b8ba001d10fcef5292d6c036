@@ -1,0 +1,98 @@
+package com.mapping.services;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mapping.entities.Company;
+import com.mapping.entities.Employee;
+import com.mapping.repositories.ICompanyRepo;
+import com.mapping.repositories.IEmployeeRepo;
+
+@Service
+public class OToMAssociationServiceImpl implements IOToMAssociationMgmtService {
+
+	@Autowired
+	private ICompanyRepo Crepo;
+	@Autowired
+	private IEmployeeRepo Erepo;
+
+	@Override
+	public void saveDataUsingParent() {
+		Company c = new Company("TCS", "Pune", "Sevice Base");
+
+		
+		Employee e1 = new Employee("Rahul Paul", "8965454233", "Full Time", LocalDate.of(2022, 02, 15));
+		Employee e2 = new Employee("Swapnil Chavan", "9545998821", "Full Time", LocalDate.of(2022, 01, 6));
+
+		// add parent to child
+		e1.setCompany(c);
+		e2.setCompany(c);
+
+		// add childs to parent
+
+		List<Employee> list = new ArrayList();
+		list.add(e1);
+		list.add(e2);
+		c.setList(list);
+
+		// save parent objcet
+		Crepo.save(c);
+		System.out.println("Company and his associated employess are saved(Parent to Child)");
+
+	}
+
+	@Override
+	public void saveDataUsingChild() {
+		
+		Company c=new Company("GS Lab", "Baner,Pune", "Service and Product");
+		
+		Employee e1=new Employee("Satish", "9545897633", "Full Time", LocalDate.of(2021, 12, 23));
+		Employee e2=new Employee("Shubham", "9789765534", "Full Time", LocalDate.of(2019, 06, 15));
+		
+		//add parent to child
+		e1.setCompany(c);
+		e2.setCompany(c);
+		//add child to parent
+		List<Employee> list=new LinkedList();
+		list.add(e1);
+		list.add(e2);
+		c.setList(list);
+		//save child object
+		Erepo.save(e1);Erepo.save(e2);
+		
+		System.out.println("Company and his associated employees are saved (Child to parent)");
+		
+
+
+	}
+
+	@Override
+	public void loadDataUsingParent() {
+		
+		List<Company> list = Crepo.findAll();
+		list.forEach(p->{
+			/*System.out.println("Parent count:::"+list.size());
+			System.out.println(p.getCName()+" "+p.getCAddress()+" "+p.getCType());
+			System.out.println("child count:::"+list.size());
+			System.out.println(p.getList());*/
+			System.out.println("parent"+p);
+			//get childs of each parent
+			
+			List<Employee> childs=new ArrayList<Employee>();
+			childs.forEach(c->{
+				System.out.println("Childs count"+childs.size());
+
+				System.out.println("Child:::"+c);
+			});
+		});
+		
+		
+		
+	}
+
+}

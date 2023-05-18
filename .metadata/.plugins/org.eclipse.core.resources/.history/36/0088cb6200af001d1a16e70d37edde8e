@@ -1,0 +1,39 @@
+package com.nit.runners;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.nit.entity.Product;
+import com.nit.services.IProductService;
+
+@Component
+public class MyRunner implements CommandLineRunner 
+{
+	@Autowired
+	private IProductService service;
+	@Override
+	public void run(String... args) throws Exception {
+		
+		/*Product p1=new Product();
+		p1.setPname("IPhone");p1.setCategory("Eletronics");p1.setPrice(55000.0);
+		Product p2=new Product();
+		p2.setPname("AppleLed");p2.setCategory("Eletronics");p2.setPrice(67000.0);
+		Product p3=new Product();
+		p3.setPname("Redmi Charger");p3.setCategory("Eletronics");p3.setPrice(700.0);
+		Product p4=new Product();
+		p4.setPname("Sprax Shoes");p4.setCategory("Fashion");p4.setPrice(900.0);
+		System.out.println(service.saveAllProduct(List.of(p1,p2,p3,p4)));    
+		*/
+		List<Product> productByIncomeRange = service.getProductByIncomeRange(500.0, 100000.0);
+		System.out.println(productByIncomeRange);
+
+
+
+		
+	}
+
+	
+}

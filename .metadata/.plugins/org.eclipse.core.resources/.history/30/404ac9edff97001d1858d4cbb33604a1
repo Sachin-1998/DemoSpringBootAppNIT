@@ -1,0 +1,3 @@
+UPDATE RegistrationUser
+SET mobileNumber='8598675433'
+WHERE id = 1;

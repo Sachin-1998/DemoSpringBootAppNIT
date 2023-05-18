@@ -1,0 +1,16 @@
+package com.nit.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mockito.Mockito;
+
+public class MockVsSpyTest
+{
+	List<String> listmock=Mockito.mock(ArrayList.class);
+	List<String> listspy=(Mockito.spy(new ArrayList()));
+	listmock.add("somu");
+	listspy.add("gomu");
+	
+
+}

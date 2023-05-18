@@ -1,0 +1,50 @@
+package com.nit.runners;
+
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		int max=0;
+		int i=0;
+		double result=0;
+		int count=0;
+		
+		System.out.println("Enter the subjects marks ");
+		int subject_mark1=sc.nextInt();
+		
+		
+
+		
+		int [] arr=new int[subject_mark1];
+		for(i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+			
+			
+		}
+		System.out.println("stop");
+
+		
+		
+		//int [] arr= {67,78,99,78,45};
+		for( i=0;i<arr.length;i++)
+		{
+			if(arr[i]>max)
+			{
+				max=arr[i];
+				result=max;
+				count++;
+				break;
+				
+			}
+		}
+		System.out.println(result);
+		double avg=arr[i]/count;
+		System.out.println(avg);
+		
+	}
+
+}

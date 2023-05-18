@@ -1,0 +1,86 @@
+spring:
+  profiles:
+    active: dev
+---
+
+spring:
+  config:
+    activate:
+      on-profiles: dev
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: sachin
+    dbcp2:
+      max-conn-lifetime-millis: '100000'
+      max-total: '100'
+      initial-size: '10'
+    url: jdbc:mysql://localhost:3306/Naresh_It
+    type: org.apache.commons.dbcp2.BasicDataSource
+    password: password
+---
+    
+spring:
+  config:
+    activate:
+      on-profiles: prod
+
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      keepalive-time: '100000'
+      maximum-pool-size: '100'
+      minimum-idle: '10'
+    username: sachin
+    url: jdbc:postgresql://localhost:5432/Naresh_It
+    password: Sachin123
+---
+spring:
+  config:
+    activate:
+      on-profiles: test
+  
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: sachin
+    url: jdbc:mysql://localhost:3306/Naresh_It
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    password: password
+c3p0:
+  maxSize: '100'
+  minSize: '10'
+  
+---
+
+spring:
+  config:
+    activate:
+      on-profiles: uat
+  
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: sachin
+    tomcat:
+      min-evictable-idle-time-millis: '100000'
+      initial-size: '10'
+      min-idle: '10'
+    url: jdbc:postgresql://localhost:5432/Naresh_It
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    password: Sachin123
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    

@@ -1,0 +1,9 @@
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/Naresh_It
+spring.datasource.username=sachin
+spring.datasource.password=Sachin123
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.datasource.hikari.maximum-pool-size=100
+spring.datasource.hikari.minimum-idle=10
+spring.datasource.hikari.keepalive-time=100000

@@ -1,0 +1,177 @@
+package com.nit;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.nit.entity.Doctor;
+import com.nit.service.IDoctorService;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
+
+@SpringBootApplication
+public class SpringBootCrudRepositoryMethodNitApplication {
+
+	public static void main(String[] args) {
+		// get IOC container
+		ApplicationContext ctx = SpringApplication.run(SpringBootCrudRepositoryMethodNitApplication.class, args);
+		// get service class object
+		IDoctorService service = ctx.getBean(IDoctorService.class);
+
+		/*create a doctor*/
+		/*try {
+			Doctor doc=new Doctor();
+			doc.setDocName("Mahesh Dev");doc.setIncome(87000.0);doc.setSpecialization("Cardio");
+			String registerDoctor = service.registerDoctor(doc);
+			System.out.println(registerDoctor);
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+			System.out.println(ex.getMessage());
+		}*/
+
+		/*create Multiple doctors*/
+
+		/*try {
+			Doctor doc1=new Doctor();
+			doc1.setDocName("Kapil Dev");doc1.setIncome(89000.0);doc1.setSpecialization("Orthopedics");
+			Doctor doc2=new Doctor();
+			doc2.setDocName("Gopal Das");doc2.setIncome(57000.0);doc2.setSpecialization("Internal Medicine");
+			Doctor doc3=new Doctor();
+			doc3.setDocName("Sunil M");doc3.setIncome(120000.0);doc3.setSpecialization("Pediatrics");
+		    String ListOfDoc = service.registerGroupOfDoctor(List.of(doc1,doc2,doc3));
+		    System.out.println(ListOfDoc);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+
+		/*create Count of doctors*/
+		/*try {
+			System.out.println("Count Of Records : "+service.fetchDoctorsCount());
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}*/
+
+		/*check given  doctor id is present or not */
+		/*try {
+			System.out.println("Check given (id) is available or not: "+service.doctorAvailability(989));
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}*/
+		/*Get All Doctors */
+		/*try {
+			Iterable<Doctor> list = service.getAllDoctors();
+			//using enhance for loop java 5 version 
+			for(Doctor dr:list)
+			{
+				System.out.println("The list of doctors: "+dr);
+			}
+			
+			//using lambda expression
+			
+			list.forEach(doc->{System.out.println("The list of doctors: "+doc);});
+			
+			//using improved enhance for loop
+			
+			list.forEach(doc-> System.out.println("The list of doctors: "+doc));
+			 
+			//java 8 for each static method reference
+			list.forEach(System.out::println);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		*/
+		/* get all records by ids*/
+		/*try {
+			//System.out.println("All doctors given by ids: "+service.showAllDoctorByIds(List.of(4,5,6,89)).toString());
+			service.showAllDoctorByIds(List.of(4,5,6,0)).forEach(System.out::println);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}*/
+
+		/*get single record by id*/
+		/*try {
+			//System.out.println("The record with given  id is : "+service.showDoctorById(5));
+			Doctor result = service.showDoctorById(545);
+			System.out.println(result);
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}*/
+
+		/*Update doctor income by id partial update* /
+		/*try {
+			System.out.println("Before update: " + service.showDoctorById(3));
+			System.out.println(service.updateDoctorIncomeById(3, 25.0f));
+			System.out.println("After update: " + service.showDoctorById(3));
+		} catch (Exception e) {
+		
+			System.out.println(e.getMessage());
+		}*/
+
+		/*Update doctor full update */
+		/*try {
+			Doctor doctor=new Doctor();
+			//System.out.println("Doctor Before update::"+service.registerOrUpdateDoctor(doctor));
+			doctor.setDocId(45);doctor.setDocName("Ranveer shaha");doctor.setIncome(250000.0);doctor.setSpecialization("Family medicine");
+			System.out.println("Doctor After update::"+service.registerOrUpdateDoctor(doctor));
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}*/
+
+		/*Delete Doctor By Given id */
+		/*try {
+			System.out.println(service.deleteDoctorById(6));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getLocalizedMessage());
+		}*/
+
+		/*Delete Doctor by doctor */
+		/*try {
+			Doctor doc = new Doctor();
+			doc.setDocId(5);
+			String deleteDoctor = service.deleteDoctor(doc);
+			System.out.println(deleteDoctor);
+		} catch (Exception e) {
+		
+			System.out.println(e.getMessage());
+		}*/
+		
+		/*Delete all records*/
+		/*try {
+			System.out.println(service.removeAllDoctors());
+		}catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}*/
+		
+		/*DELETE MULTIPLE DOCTORS WITH GIVEN IDS*/
+		try{
+			String removeDoctorsByIds = service.removeDoctorsByIds(List.of());
+			System.out.println(removeDoctorsByIds);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		((ConfigurableApplicationContext) ctx).close();
+	}
+
+}
